@@ -81,17 +81,25 @@ function OrderModal({ open, onClose }: OrderModalProps) {
               aria-label="Close"
               type="button"
             >
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
               </svg>
             </button>
 
             <div className="modal-eyebrow">Step 1 of 3</div>
             <h3 id="modal-title" className="modal-title">
-              Let's get your prep on the way.
+              Let's get your box on the way.
             </h3>
             <p className="modal-sub">
-              Tell us who's getting it. We'll handle the rest.
+              Start with your details — we'll confirm your procedure date and
+              shipping next.
             </p>
 
             <form className="form" onSubmit={handleSubmit(onSubmit)} noValidate>
@@ -104,7 +112,9 @@ function OrderModal({ open, onClose }: OrderModalProps) {
                     aria-invalid={!!errors.firstName}
                   />
                   {errors.firstName && (
-                    <span className="field-error">{errors.firstName.message}</span>
+                    <span className="field-error">
+                      {errors.firstName.message}
+                    </span>
                   )}
                 </label>
                 <label className="field">
@@ -115,7 +125,9 @@ function OrderModal({ open, onClose }: OrderModalProps) {
                     aria-invalid={!!errors.lastName}
                   />
                   {errors.lastName && (
-                    <span className="field-error">{errors.lastName.message}</span>
+                    <span className="field-error">
+                      {errors.lastName.message}
+                    </span>
                   )}
                 </label>
               </div>
@@ -152,19 +164,31 @@ function OrderModal({ open, onClose }: OrderModalProps) {
                 {isSubmitting ? "Submitting…" : "Continue"}
               </button>
               <p className="form-fine">
-                By continuing you agree to our terms. We'll never share your info.
+                By continuing you agree to our terms. We'll never share your
+                info.
               </p>
             </form>
           </>
         ) : (
           <div className="modal-success">
             <div className="success-mark">
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12l5 5L20 7" strokeLinecap="round" strokeLinejoin="round" />
+              <svg
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path
+                  d="M5 12l5 5L20 7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </div>
-            <h3 className="modal-title">You're in.</h3>
-            <p className="modal-sub">We'll be in touch shortly.</p>
+            <h3 className="modal-title">You're all set.</h3>
+            <p className="modal-sub">We'll be in touch to confirm your box.</p>
           </div>
         )}
       </div>
